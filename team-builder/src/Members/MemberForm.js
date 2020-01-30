@@ -4,8 +4,8 @@ const MemberForm = props => {
     
     const [teamMember, setTeamMember] = useState({
         name: " ",
-        location: " ",
-        note:" "
+        email: " ",
+        role:" "
     });
 
     const handleChanges = event => {
@@ -16,7 +16,7 @@ const MemberForm = props => {
     const submitForm = event => {
         event.preventDefault();
         props.addNewMember(teamMember);
-        setTeamMember({name: '', location: '', note: ''})
+        setTeamMember({name: '', email: '', role: ''})
     };
 
     return (
@@ -29,21 +29,21 @@ const MemberForm = props => {
                 onChange={handleChanges}
                 value={teamMember.name}
             />
-            <label htmlFor='location'>Location:</label>
+            <label htmlFor='email'>Email:</label>
             <input
-                id='location'
-                type='text'
-                name='location'
+                id='email'
+                type='email'
+                name='email'
                 onChange={handleChanges}
-                value={teamMember.location}
+                value={teamMember.email}
             />
-            <label htmlFor='note'>Note:</label>
+            <label htmlFor='role'>Role:</label>
             <input
-                id='note'
+                id='role'
                 type='text'
-                name='note'
+                name='role'
                 onChange={handleChanges}
-                value={teamMember.note}
+                value={teamMember.role}
             />
         <button type="submit"> Add Team Member</button>
        </form>
